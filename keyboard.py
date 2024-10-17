@@ -1,152 +1,63 @@
-from aiogram.types import ReplyKeyboardMarkup, InlineKeyboardMarkup, KeyboardButton, InlineKeyboardButton
-from aiogram.utils.keyboard import ReplyKeyboardBuilder
-from aiogram.filters.callback_data import CallbackData
+from aiogram.types import KeyboardButton, InlineKeyboardMarkup
+from aiogram.utils.keyboard import ReplyKeyboardMarkup, InlineKeyboardButton
 
-class AchivmetCallbackData(CallbackData, prefix="achivmet", sep=";"):
-    id: int
-    name: str
-Menu = ReplyKeyboardMarkup(
-    keyboard= [
-        [
-            KeyboardButton(text='menu'),
 
-        ]
-    ],
-    resize_keyboard=True,
-    one_time_keyboard=False
+main = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="Чому варто пограти"),KeyboardButton(text="Схожі ігри")],
+    [KeyboardButton(text="Місії"), KeyboardButton(text="Досягнення")],
+    [KeyboardButton(text="Зворотній звязок"),KeyboardButton(text="Усі кінцівки")],
+    [KeyboardButton(text="Меми для IT-шніков😂")]
+],
+resize_keyboard=True,
 )
-startMenu = ReplyKeyboardMarkup(
-    keyboard= [
-        [
-            KeyboardButton(text='menu'),
-            KeyboardButton(text='Досягнення'),
-            KeyboardButton(text='Схожі ігри'),
-            KeyboardButton(text='Чому варто пограти'),
-            KeyboardButton(text='Фото гри'),
-            KeyboardButton(text='Місії'),
-        ]
-    ],
-    resize_keyboard=True,
-    one_time_keyboard=False
+setting = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="YouTube", url="https://www.youtube.com/@lostong7729")]
+    ])
+
+
+games = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="S.T.A.L.K.E.R."),KeyboardButton(text="Fallout 4")],
+    [KeyboardButton(text="Dying Light"), KeyboardButton(text="The Last of Us Part II")],
+    [KeyboardButton(text="Horizon Zero Dawn"), KeyboardButton(text="Chernobylite")],
+    [KeyboardButton(text="Інші ігри"),KeyboardButton(text="Меню")]
+],
+resize_keyboard=True
 )
-ahivka1 = ReplyKeyboardMarkup(
-    keyboard= [
-        [
-            KeyboardButton(text='menu'),
-            KeyboardButton(text='Hardcore'),
-            KeyboardButton(text='Martian'),
-            KeyboardButton(text='Silent Assassin'),
-            KeyboardButton(text='Forest Child'),
-            KeyboardButton(text='Dukes Fate'),
-            KeyboardButton(text='Full Strength'),
-            KeyboardButton(text='Friend of the Crew'),
-            KeyboardButton(text='Librarian'),
-            KeyboardButton(text='Handyman'),
-            KeyboardButton(text='Saboteur'),
-            KeyboardButton(text='Gunsmith'),
-            KeyboardButton(text='>>>'),
-        ]
-    ],
-    resize_keyboard=True,
-    one_time_keyboard=False
+misions_detal = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="Погана")]
+])
+mision = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="Москва"),KeyboardButton(text="Волга")],
+    [KeyboardButton(text="Ямантау"),KeyboardButton(text="Каспій")],
+    [KeyboardButton(text="Тайга"),KeyboardButton(text="Мертве місто")],
+    [KeyboardButton(text="Меню")]
+
+],
+resize_keyboard=True
 
 )
-ahivka2 = ReplyKeyboardMarkup(
-    keyboard= [
-        [
+end = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="Оптимістичний фінал"),KeyboardButton(text="Фінал з Дімою")],
+    [KeyboardButton(text="Песимістичний фінал"),KeyboardButton(text="Фінал з Мілею")],
+    [KeyboardButton(text="Меню")],
+])
+resize_keyboard=True
 
-            KeyboardButton(text='menu'),
-            KeyboardButton(text='Railwayman'),
-            KeyboardButton(text='Long-distance Passenger'),
-            KeyboardButton(text='Sword of Damocles'),
-            KeyboardButton(text='Antibiotic'),
-            KeyboardButton(text='Survivalist'),
-            KeyboardButton(text='Guide'),
-            KeyboardButton(text='Lower the Bridge'),
-            KeyboardButton(text='Firebird'),
-            KeyboardButton(text='Brakeman'),
-            KeyboardButton(text='Last Breath'),
-            KeyboardButton(text='<<<'),
-        ]
-    ],
-    resize_keyboard=True,
-    one_time_keyboard=False
 
+achivm = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="Паспорт"),KeyboardButton(text="Не забудь про нас"),KeyboardButton(text="Смертельний холод"),KeyboardButton(text="Вирушай у мандри"),KeyboardButton(text="Переможець")],
+    [KeyboardButton(text="Спостерігач"),KeyboardButton(text="Грішник"),KeyboardButton(text="Тихий вбивця"),KeyboardButton(text="Секрети"),KeyboardButton(text="Життя за життя")],
+    [KeyboardButton(text="Снайпер"), KeyboardButton(text="Найкращий друг"), KeyboardButton(text="Мисливець за скарбами"), KeyboardButton(text="Секрети народу"),KeyboardButton(text="Тотальна війна")],
+    [KeyboardButton(text="Меню")],
+])
+mems = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="1"),KeyboardButton(text="2"),KeyboardButton(text="3"),KeyboardButton(text="4"),KeyboardButton(text="5")],
+    [KeyboardButton(text="6"),KeyboardButton(text="7"),KeyboardButton(text="8"),KeyboardButton(text="9"),KeyboardButton(text="10")],
+    [KeyboardButton(text="11"), KeyboardButton(text="12"), KeyboardButton(text="13"), KeyboardButton(text="14"),KeyboardButton(text="15")],
+    [KeyboardButton(text="Меню")],
+
+],
+    resize_keyboard=True
 )
-how_play = ReplyKeyboardMarkup(
-    keyboard= [
-        [
-            KeyboardButton(text='menu'),
-            KeyboardButton(text='game_info'),
-            KeyboardButton(text='setting'),
-            KeyboardButton(text='gameplay'),
-            KeyboardButton(text='story'),
-            KeyboardButton(text='why_play'),
 
-        ]
-    ],
-    resize_keyboard=True,
-    one_time_keyboard=False
-
-)
-mission = ReplyKeyboardMarkup(
-    keyboard= [
-        [
-            KeyboardButton(text='menu'),
-            KeyboardButton(text='Moscow'),
-            KeyboardButton(text='The Volga'),
-            KeyboardButton(text='Yamantau'),
-            KeyboardButton(text='The Caspian'),
-            KeyboardButton(text='The Taiga'),
-            KeyboardButton(text='The Dead City'),
-
-        ]
-    ],
-    resize_keyboard=True,
-    one_time_keyboard=False
-
-)
-any_game1 = ReplyKeyboardMarkup(
-    keyboard= [
-        [
-            KeyboardButton(text='menu'),
-            KeyboardButton(text='S.T.A.L.K.E.R.: Shadow of Chernobyl'),
-            KeyboardButton(text='Fallout 4'),
-            KeyboardButton(text='The Last of Us Part II'),
-            KeyboardButton(text='BioShock'),
-            KeyboardButton(text='Mad Max'),
-            KeyboardButton(text='Far Cry 5'),
-            KeyboardButton(text='Rage 2'),
-            KeyboardButton(text='Dying Light'),
-            KeyboardButton(text='Metro 2033'),
-            KeyboardButton(text='Horizon Zero Dawn'),
-            KeyboardButton(text='>>>'),
-
-        ]
-    ],
-    resize_keyboard=True,
-    one_time_keyboard=False
-
-)
-any_game2 = ReplyKeyboardMarkup(
-    keyboard= [
-        [
-            KeyboardButton(text='menu'),
-            KeyboardButton(text='Days Gone'),
-            KeyboardButton(text='Escape from Tarkov'),
-            KeyboardButton(text='Resident Evil 2 Remake'),
-            KeyboardButton(text='Prey'),
-            KeyboardButton(text='Half-Life 2'),
-            KeyboardButton(text='The Division 2'),
-            KeyboardButton(text='The Forest'),
-            KeyboardButton(text='Subnautica'),
-            KeyboardButton(text='Chernobylite'),
-            KeyboardButton(text='<<<'),
-
-        ]
-    ],
-    resize_keyboard=True,
-    one_time_keyboard=False
-
-)
 
